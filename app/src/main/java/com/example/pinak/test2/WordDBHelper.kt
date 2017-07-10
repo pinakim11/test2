@@ -59,7 +59,7 @@ class WordDBHelper(context: Context) : SQLiteOpenHelper(context, "word.db", null
 
     fun setMeaning(text: String) {
         val values = ContentValues()
-        values.put(MeaningContract.Meanings.WORD, text)
+        values.put(WORD.toUpperCase(), text)
         //values.put(TIMESTAMP, System.currentTimeMillis())
         getWritableDatabase().insert(TABLE, null, values);
     }
